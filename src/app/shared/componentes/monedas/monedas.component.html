@@ -1,0 +1,22 @@
+<div class="formulario">
+<h1>Conversor de monedas</h1>
+
+    <label>Introduce un valor en EUR:</label>
+    <input type="number" [(ngModel)]="valor" >
+  
+    <label>Elige una moneda de conversión:</label>
+    <select [(ngModel)]="seleccion" (change)="changeMoney($event)">  
+      <option *ngFor="let k of cambio" [value]="k.name">{{k.name}}</option>
+    </select>
+  <div *ngFor="let i of cambio" >
+    <div class="pintar_nombre">
+      {{i.name}}
+    </div>
+    <div class="pintar_valor">{{(i.value*valor).toFixed(3)}}</div>
+    
+  </div>
+</div>
+    
+ 
+  
+  
